@@ -1,0 +1,19 @@
+.git
+.idea
+.vscode
+
+# Frontend
+frontend/node_modules
+frontend/dist
+
+# Backend
+backend/target
+
+# IA (no usar venv en build)
+IA-VersionFuncional/ia/Scrpts/venv_ia
+**/__pycache__/
+*.pyc
+
+# Local env
+.env
+.env.*

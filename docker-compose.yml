@@ -1,0 +1,65 @@
+# Proyecto Primaria - Docker Compose
+# Para producción detrás de pfSense/Sunstone: exponer solo el servicio 'frontend' (puerto 80)
+# y configurar el proxy inverso hacia este contenedor.
+
+services:
+  ia:
+    build:
+      context: ./IA-VersionFuncional/ia/Scrpts
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      IA_SECRET: ${IA_SECRET:-SECRET_KEY_INTERNAL}
+    ports:
+      - "5005:5005"
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-primaria_db}
+      MYSQL_USER: ${MYSQL_USER:-primaria}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?MYSQL_PASSWORD no definida}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?MYSQL_ROOT_PASSWORD no definida}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-primaria_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-primaria}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:?MYSQL_PASSWORD no definida}
+      IA_URL: http://ia:5005
+      IA_SECRET: ${IA_SECRET:-SECRET_KEY_INTERNAL}
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ia:
+        condition: service_started
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-/api}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

@@ -1,0 +1,120 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vh;
+  max-width: 100vh;
+  margin: 0 auto;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f9fafb;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #a2bde9;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header button {
+  background-color: white;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.chat-header button:hover {
+  background-color: #e0e7ff;
+  transform: scale(1.03);
+}
+
+.chat-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: #f1f5f9;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  animation: fadeIn 0.2s ease;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.chat-input-area {
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input-area input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input-area input:focus {
+  border-color: #3b82f6;
+}
+
+.chat-input-area button {
+  margin-left: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.chat-input-area button:hover {
+  background-color: #2563eb;
+  transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

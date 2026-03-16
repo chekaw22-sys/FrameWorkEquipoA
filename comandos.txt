@@ -1,0 +1,31 @@
+#iniciar MySQL
+sudo systemctl start mysql
+
+#acceder a MySQL
+sudo mysql -u proyectousuario -p
+password=Proy3ct0_2025!
+
+SHOW DATABASES;
+use primaria_db
+SHOW TABLES;
+
+#iniciar SpringBoot(dentro de la carpeta backend)
+./mvnw spring-boot:run
+
+#iniciar React(dentro de la carpeta frontend)
+npm run dev
+
+#iniciar venv_ia
+cd /home/proyectousuario/Documentos/s/IA-VersionFuncional/ia/Scrpts
+source venv_ia/bin/activate
+
+#iniciar IA (dentro del entorno)
+python3 ia_fastapi2_0.py
+
+
+
+
+#BUSCAR SERVICIOS POR PUERTO (5005)
+sudo lsof -i :5005
+#MATAR SERVICIO
+sudo kill NUM_SERVICIO

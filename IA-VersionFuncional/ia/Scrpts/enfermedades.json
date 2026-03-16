@@ -1,0 +1,78 @@
+{
+  "fiebre": {
+    "síntomas": ["fiebre", "escalofríos", "dolor de cabeza", "fatiga", "sudoración", "cansancio"],
+    "sinónimos": ["temperatura alta", "fiebre alta", "hipertermia"]
+  },
+  "gripe": {
+    "síntomas": ["fiebre", "dolor de garganta", "tos", "dolores musculares", "escalofríos", "fatiga"],
+    "sinónimos": ["influenza", "resfriado grave"]
+  },
+  "neumonía": {
+    "síntomas": ["fiebre", "dolor de pecho", "dificultad para respirar", "tos", "fatiga", "escalofríos"],
+    "sinónimos": ["infección pulmonar", "infección en los pulmones", "neumonía bacteriana"]
+  },
+  "bronquitis": {
+    "síntomas": ["tos persistente", "dificultad para respirar", "fiebre", "sibilancias", "fatiga", "dolor de pecho"],
+    "sinónimos": ["infección bronquial", "inflamación de los bronquios"]
+  },
+  "asma": {
+    "síntomas": ["dificultad para respirar", "sibilancias", "tos", "opresión en el pecho", "dificultad para exhalar"],
+    "sinónimos": ["bronquitis asmática", "enfermedad pulmonar obstructiva"]
+  },
+  "malaria": {
+    "síntomas": ["fiebre alta", "escalofríos", "sudoración excesiva", "dolor de cabeza intenso", "náuseas", "vómitos"],
+    "sinónimos": ["paludismo", "enfermedad por malaria"]
+  },
+  "Covid-19": {
+    "síntomas": ["fiebre", "tos", "dificultad para respirar", "dolor de garganta", "fatiga", "pérdida del olfato", "dificultad para oler"],
+    "sinónimos": ["coronavirus", "enfermedad por coronavirus", "SARS-CoV-2"]
+  },
+  "tuberculosis": {
+    "síntomas": ["tos persistente", "fiebre baja", "sudoración nocturna", "pérdida de peso", "dolor en el pecho"],
+    "sinónimos": ["TB", "tuberculosis pulmonar"]
+  },
+  "hepatitis": {
+    "síntomas": ["ictericia", "fatiga", "náuseas", "dolor abdominal", "fiebre", "orina oscura"],
+    "sinónimos": ["hepatitis viral", "inflamación hepática"]
+  },
+  "migraña": {
+    "síntomas": ["dolor de cabeza intenso", "náuseas", "sensibilidad a la luz", "vómitos", "visión borrosa"],
+    "sinónimos": ["jaqueca"]
+  },
+  "apendicitis": {
+    "síntomas": ["dolor abdominal", "fiebre", "náuseas", "vómitos", "pérdida de apetito"],
+    "sinónimos": ["inflamación del apéndice", "apendicitis aguda"]
+  },
+  "diabetes tipo 2": {
+    "síntomas": ["sed excesiva", "micción frecuente", "fatiga", "visión borrosa", "heridas que no cicatrizan"],
+    "sinónimos": ["diabetes mellitus tipo 2", "diabetes no insulinodependiente"]
+  },
+  "infarto de miocardio": {
+    "síntomas": ["dolor en el pecho", "dificultad para respirar", "sudoración", "náuseas", "mareos", "dolor en el brazo izquierdo"],
+    "sinónimos": ["ataque al corazón", "infarto", "parada cardíaca"]
+  },
+  "ictus": {
+    "síntomas": ["debilidad en un lado del cuerpo", "dificultad para hablar", "dolor de cabeza intenso", "pérdida de visión"],
+    "sinónimos": ["ACV", "accidente cerebrovascular"]
+  },
+  "insuficiencia renal": {
+    "síntomas": ["hinchazón en pies y tobillos", "fatiga", "orina espumosa", "dificultad para respirar", "confusión"],
+    "sinónimos": ["enfermedad renal crónica", "insuficiencia renal aguda"]
+  },
+  "artritis reumatoide": {
+    "síntomas": ["dolor en las articulaciones", "inflamación", "rigidez articular", "fatiga", "fiebre baja"],
+    "sinónimos": ["artritis inflamatoria", "artritis autoinmune"]
+  },
+  "alergia estacional": {
+    "síntomas": ["estornudos", "picazón en los ojos", "nariz congestionada", "tos", "secreción nasal"],
+    "sinónimos": ["rinitis alérgica", "fiebre del heno"]
+  },
+  "esquizofrenia": {
+    "síntomas": ["alucinaciones", "delirios", "trastornos del pensamiento", "aislamiento social", "apatía"],
+    "sinónimos": ["trastorno psicótico", "psicosis crónica"]
+  },
+  "depresión": {
+    "síntomas": ["sentimientos de tristeza", "falta de energía", "dificultad para concentrarse", "pérdida de interés en actividades", "trastornos del sueño"],
+    "sinónimos": ["trastorno depresivo mayor", "trastorno afectivo"]
+  }
+}
